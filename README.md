@@ -1,6 +1,7 @@
 # Github-Examples
 A repo containing GitHub for programmatic examples
 
+## GitHub Action Basics
 ### Workflow Triggers
 
 - Are events that cause a workflow to run such as:
@@ -55,3 +56,9 @@ curl -X POST \
 -d '{"event_type": "webhook", "client_payload": {"key": "value"} }' \
 https://api.github.com/repos/{owner}/{repo}/dispatches
 ```
+
+
+## Runners and Commands
+### Runners
+- determines the underlying compute and OS that the workflow will execute on
+- can be GitHub- or self-hosted
