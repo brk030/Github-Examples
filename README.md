@@ -62,3 +62,12 @@ https://api.github.com/repos/{owner}/{repo}/dispatches
 ### Runners
 - determines the underlying compute and OS that the workflow will execute on
 - can be GitHub- or self-hosted
+
+### Self-Hosted Runners
+- to setup self-hosted you need to add a runner (install the "GitHub Actions Runner") to connect the external compute 
+to the self-hosted runner
+- can be physical, virtual, in a container, on-premises, in a cloud
+- can be at various levels in the management hierachy 
+  - repository-level: runner are dedicated to a single repository
+  - organization-level: runners can process multiple jobs for multiple repositories in an organization
+  - enterprise-level: runners can be assigned to multiple organizations in an enterprise account
