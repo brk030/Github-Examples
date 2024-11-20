@@ -35,4 +35,25 @@ If multiple triggering events for your workflow occur at the same time, multiple
 - using the CLI:
   - gh workflow run [name_of_files] -f [can_input_variables_using_flags]
 
+### Webhook Events 
+- Webhook - is an public facing URL that can be sent an HTTP request (often requiring authorization) to trigger events 
+from external resources
+- many of the listed GitHub Workflow Triggers are triggered by a webhook
+- using "repository_dispatch" with webhook type you can trigger the Workflow via an external 
+HTTP endpoint 
+  - will only trigger a workflow run if the workflow is on the default branch
+
+Example of curl webhook 
+1. send a POST request to the rep's dispatched endpoint
+2. set 'Accept' type for 'application/vnd.github+json'
+3. provide authorization for your personal access token
+4. pass the event type 'webhook'
+```sh
+curl -X POST \
+-H "Accept: application/vnd.github+json" \
+-H "Authorization: token {PAT} \
+-d '{"event_type": "webhook", "client_payload": {"key": "value"} }' \
+https://api.github.com/repos/{owner}/{repo}/dispatches
+```
+
   
