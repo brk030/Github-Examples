@@ -51,7 +51,7 @@ Example of curl webhook
 ```sh
 curl -X POST \
 -H "Accept: application/vnd.github+json" \
--H "Authorization: token {PAT} \
+-H "Authorization: token {PAT/AUTH} \  # token word has to stay 
 -d '{"event_type": "webhook", "client_payload": {"key": "value"} }' \
 https://api.github.com/repos/{owner}/{repo}/dispatches
 ```
